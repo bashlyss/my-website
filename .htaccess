@@ -1,0 +1,5 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^james-loewen.com$
+RewriteRule ^(.*)$ "http\:\/\/www\.james\-loewen\.com\/$1" [R=301,L]
+
