@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/css/ext/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/wassup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img class="logo" src="/static/wassup_logo.png"/>
+
+      <div class="pull-right">
+        <form method="POST" class="form" id="" action="/logout" enctype="multipart/form-data">
+          <input class="btn btn-default" type="submit" value="Log Out" />
+        </form>
+      </div>
+      <div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <form id="friend_select_form" role="form" class="form-horizontal">
+
+            </form>
+            <button id="send_sup_btn" class="btn btn-default">Send Sup</button>
+          </div>
+          <form id="add_friend_form" role="form" class="form-group form-inline">
+            <div class="form-group">
+              <label for="friend_id">Add/Remove Friend</label>
+              <input type="text" id="friend_id" name="user_id" class="form-control"/>
+              <button id="add_friend_button" class="btn btn-default">+</button>
+              <button id="remove_friend_button" class="btn btn-default">-</button>
+            </div>
+          </form>
+          <div class="btn-group server_select">
+            <button id="private_btn" class="btn btn-info">Private</button>
+            <button id="public_btn" class="btn btn-info">Public</button>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <div id="current_sup_div">
+            <canvas id="sup_canvas" width="450" height="400"></canvas>
+            <div class="col-sm-6">
+              <p>You got <span id="sup_count"></span> Sups</p>
+              <p id="sup_info">Sup received from: <span id="sup_sender"></span> at <span id="sup_time"></span>.</p>
+            </div>
+            <div class="col-sm-6">
+              <div class="btn-group">
+                <button id="next_sup_btn" class="btn btn-default"><</button>
+                <button id="prev_sup_btn" class="btn btn-default">></button>
+              </div>
+              <button id="delete_sup_btn" class="pull-right btn btn-warning">Delete</button>
+              <button id="clear_sup_btn" class="pull-right btn btn-danger">Delete All</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal"><!-- Place at bottom of page --></div>
+    </div>
+    <script src="static/js/ext/underscore.js"></script>
+    <script type="text/javascript" src="/static/js/wassup.js"></script>
+  </body>
+</html>

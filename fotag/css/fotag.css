@@ -1,0 +1,125 @@
+/* Put any additional CSS here */
+
+#app-container {
+    background: lightblue;
+    overflow:auto;
+}
+
+.button-div {
+    float: right;
+    right: 0px;
+}
+
+.image-popup {
+    overflow:auto;
+}
+
+.full-image {
+    width: 100%;
+    height: 100%;
+}
+
+.toolbar {
+    background: white;
+    overflow:auto;
+}
+
+.starYellow path {
+    fill: yellow;
+}
+
+.starwhite path {
+    fill: white;
+}
+
+.star {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+}
+
+.float-left {
+    float: left;
+    overflow:auto;
+}
+
+.float-right {
+    float: right;
+    overflow:auto;
+}
+
+.float-none {
+    clear: both;
+}
+
+.deselected-img {
+    -webkit-filter: grayscale(100%);
+}
+
+.image-name,
+.image-updated-date{
+   white-space: nowrap;
+}
+
+.grid-view {
+    display: block;
+    overflow: auto;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+.list-view {
+    display: block;
+}
+
+.image-metadata.list-view {
+    padding: 10px 10px;
+    overflow:auto;
+}
+
+.image-metadata.grid-view {
+    padding: 10px 10px;
+}
+
+.toolbar h1 {
+    padding-left: 20px;
+}
+
+.files-input {
+    padding: 10px;
+}
+
+@media only screen and (min-width: 760px) and (min-device-width: 760px) {
+    .list-view {
+        display: inline-block;
+        float: left;
+    }
+
+    .image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .image-metadata.list-view {
+
+        padding-left: 100px;
+        padding-top: 30px;
+    }
+
+    .toolbar h1 {
+        padding-left: 30%;
+    }
+
+    .files-input {
+        padding: 10px 0px 10px 45%;
+    }
+
+    .image-popup-div {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+}

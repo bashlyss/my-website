@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>UTrack!</title>
+    <link rel="stylesheet" href="css/ext/bootstrap.css"/>
+    <link rel="stylesheet" href="css/utrack.css"/>
+</head>
+<body>
+
+<div id="app_container" class="container">
+
+    <template id="remove_data_button_template">
+        <button class="remove_button btn btn-danger">X</button>
+    </template>
+
+    <template id="add_activity_button_template">
+        <button class="add_button btn btn-default pull-right">Add Activity Type</button>
+    </template>
+
+
+    <div class="pad-bottom">
+        <h1 class="text-center">UTrack!</h1>
+        Track and analyze data that matters to you!
+    </div>
+
+    <div id = "switch_view_buttons" class="btn-group pad-bottom">
+        <button id="input_button" class="btn btn-primary">Input</button>
+
+        <button id="analysis_button" class="btn btn-info">Analysis</button>
+    </div>
+
+    <div id="input_div">
+        <form id="input_form" role="form">
+            <div class="form_group pad-bottom" id="input_activity_div">
+                <label for="input_activity">activity:</label>
+                <select name="Activity" id="input_activity" class="form-control">
+                </select>
+            </div>
+
+            <div class="form_group pad-bottom">
+                <label for="input_energy">energy level:</label>
+                <select name="Energy Level" id="input_energy" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <span class="pull-right">(1=exhausted, 5=very awake)</span>
+            </div>
+
+            <div class="form_group pad-bottom">
+                <label for="input_stress">stress level:</label>
+                <select name="Stress Level" id="input_stress" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <span class="pull-right">(1=very stressed, 5=very relaxed)</span>
+            </div>
+
+            <div class="form_group pad-bottom">
+                    <label for="input_happiness">happiness level:</label>
+                    <select name="Happiness Level" id="input_happiness" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <span class="pull-right">(1=depressed, 5=very happy)</span>
+            </div>
+
+            <div class="form_group pad-bottom clearfix">
+                <label for="input_time">time spent:</label>
+                <input type="text" name="Time Spent" id="input_time" class="form-control">
+                <span class="pull-right">minutes</span>
+            </div>
+
+            <div class="text-right clearfix">
+                Last data point entered: <span id="last_data_time">never</span>
+                <input type="submit" id="input_submit" class="btn btn-success">
+            </div>
+        </form>
+    </div>
+
+    <div id="analysis_div" class="row" >
+        <!-- Put HTML here to support users in analyzing their data -->
+        <div id="analysis_views" class="col-md-4">
+            <h4>Views</h4>
+            <form id="view_select_form" role="form">
+            </form>
+        </div>
+        <div id="analysis_displays" class="col-md-6">
+            <div id="time_table">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th width="70%">Activities Tracking</th>
+                        <th>Time Spent</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody id="table_summary">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="scatterplot_div">
+                <canvas id="scatterplot_canvas" width="800" height="300">
+                    If you don't have an HTML5-compatible browser, you'll see this text.
+                </canvas>
+                <div id="customize_plot">
+                    Customize:
+                    <form id="input_customize_plot" role="form">
+                        <div class="checkbox">
+                            <label><input type="checkbox" id="check_energy" checked>Energy Level (o)</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" id="check_stress" checked>Stress Level (+)</label>
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox" id="check_happiness" checked>Happiness Level (x)</label>
+                        </div>
+                        <input type="submit" value="Plot" class="btn btn-default">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="unit_tests">
+        <!-- Keep this here so TAs can run your unit tests -->
+        <a href="unit_tests.html">Run Unit Tests</a>
+    </div>
+
+</div>
+
+<script src="js/ext/underscore.js"></script>
+<script src="js/model.js"></script>
+<script src="js/view.js"></script>
+<script src="js/utrack.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+body {
+    background: cyan;
+}
+
+.logo {
+    width: 250px;
+}
+
+#clear_sup_btn,
+#delete_sup_btn,
+#next_sup_btn,
+#prev_sup_btn{
+    margin-top: 15px;
+}
+
+#sup_canvas {
+    border: 1px solid black;
+}
+
+/*
+mody, loading css taken from
+http://stackoverflow.com/questions/1964839/jquery-please-wait-loading-animation
+to draw wait icon
+*/
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 )
+    url('http://i.stack.imgur.com/FhHRx.gif')
+    50% 50%
+    no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+
+.server_select, #add_friend_form {
+    display: none;
+}
+
+#friend_id {
+    width: auto;
+}
+
+@media only screen and (min-width: 450px) and (min-device-width: 450px) {
+    .server_select {
+        display: inline-block;
+    }
+
+    #add_friend_form {
+        display: block;
+    }
+}
