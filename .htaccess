@@ -1,4 +1,6 @@
 
+DirectoryIndex home.php
+
 RewriteEngine on
 
 RewriteCond %{HTTP_HOST} ^james-loewen.com$
