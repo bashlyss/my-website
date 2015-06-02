@@ -249,7 +249,7 @@ function handleAjaxRequest(command, command_data, callback) {
         }
     });
     if (command != 'get_sups') {
-        body[0].classList.add('loading');
+//        body[0].classList.add('loading');
     }
 
     // This opens a POST connection with the server at the given URL
@@ -267,7 +267,7 @@ function handleAjaxRequest(command, command_data, callback) {
     if (server === PUBLIC_SERVER) {
         objectToSend.user_id = getCookie("user_id");
     }
-    httpRequest.send(JSON.stringify(objectToSend));
+//    httpRequest.send(JSON.stringify(objectToSend));
 }
 
 function drawSup () {
