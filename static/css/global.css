@@ -1,0 +1,36 @@
+.sidebar {
+  display: table-cell;
+  padding: 16px;
+  vertical-align: top;
+  background: #F0F0F0;
+  height: 100%;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: black;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sub-heading {
+  cursor: pointer;
+  color: gray;
+}
+
+.main {
+  display: table-cell;
+  padding: 16px;
+}
+
+body {
+  display: table;
+}
