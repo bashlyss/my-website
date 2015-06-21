@@ -16,11 +16,12 @@
       <li><a href="/interests/stagemanagement.php">Stage Management</a></li>
       <li><a href="/interests/chess.php">Chess</a></li>
       <li><a href="/interests/chapel.php">Chapel Committee</a></li>
+      <li><a href="/interests/contests.php">Programming Competitions</a></li>
     </ul>
   </li>
   <li><span class="sub-heading">Movie Reviews</span>
     <ul>
-      <li>Coming Soon...</li>
+      <li><a href="/movies/listing.php">View All Movies</a></li>
     </ul>
   </li>
 </ul>

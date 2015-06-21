@@ -22,5 +22,6 @@
   </div>
 </body>
 <script src="/static/js/ext/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="/static/js/ext/jquery.tablesorter.min.js" type="text/javascript"></script>
 <script src="/static/js/global.js" type="text/javascript"></script>
 </html>

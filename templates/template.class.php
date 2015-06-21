@@ -66,11 +66,31 @@
             	return "Error loading template file ($this->file).<br />";
             }
             $output = file_get_contents($fullPath);
+
+            // removes PHP style comments
+            $comment_pattern = array('#/\*.*?\*/#s', '#(?<!:)//.*#'); 
+            $output = preg_replace($comment_pattern, NULL, $output);
             
+            // parse if statements
+            $ifblocks = [];
+            $if_pattern = "/\[\?if (?P<tag>\w+)\](?P<text>.*?)?\[\?fi\]/";
+            preg_match_all($if_pattern, $output, $ifblocks, PREG_SET_ORDER);
+            foreach ($ifblocks as $ifblock) {
+              if (strcmp($this->values[$ifblock['tag']], '')) {
+                $output = str_replace($ifblock[0], $ifblock['text'], $output);
+              } else {
+                $output = str_replace($ifblock[0], '', $output);
+              }
+            }
+            
+            // replace tags
             foreach ($this->values as $key => $value) {
             	$tagToReplace = "[@$key]";
             	$output = str_replace($tagToReplace, $value, $output);
+            	
             }
+            $tagPattern = "/\[@\w+\]/";
+            $output = preg_replace($tagPattern, "", $output);
 
             return $output;
         }
