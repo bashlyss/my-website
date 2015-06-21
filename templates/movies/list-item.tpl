@@ -4,4 +4,5 @@
   <td class="col3">[@genre]</td>
   <td class="col4">[@runtime]</td>
   <td class="col5">[@rating]</td>
+  <td class="col6">[@id]</td>
 </tr>

@@ -96,4 +96,7 @@ body {
   min-width: 80px;
   text-align: center;
 }
-  
+
+.movie-listing .col6 {
+  display: none;
+}

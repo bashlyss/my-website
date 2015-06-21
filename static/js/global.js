@@ -4,35 +4,29 @@ $(document).ready( function () {
     $(this).parent().children("ul").toggle();
   });
   
-  // $("#movie-search-form").tablesorter();
-  $("#movie-header").click(function () {
-    sortMovies("name", "asc");
-  });
-  $("#year-header").click(function () {
-    sortMovies("year", "desc");
-  });
-  $("#genre-header").click(function () {
-    sortMovies("genre", "asc");
-  });
-  $("#runtime-header").click(function () {
-    sortMovies("runtime", "desc");
-  });
-  $("#rating-header").click(function () {
-    sortMovies("quality", "desc");
-  });
+  $(".movie-listing").tablesorter({ 
+    // sort on the first column and third column, order asc 
+    sortList: [[4,1],[0,0]] 
+  }); 
 });
 
-function sortMovies (sortField, defaultOrder) {
-  var curVal = $("[name='sort-field']").val();
-  if (curVal === sortField) {
-    if ("asc" === $("[name='sort-order']").val()) {
-      $("[name='sort-order']").val("desc");
-    } else {
-      $("[name='sort-order']").val("asc");
+$("#movie-search-form").submit(function () {
+  event.preventDefault();
+  
+  var posting = $.post("/movies/search.php", {
+    keyword: $("[name='keyword']").val()
+  });
+  posting.done(function(data) {
+    arr = JSON.parse(data);
+    $("tbody tr").hide();
+    if (arr) {
+      $("tbody tr td:last-child").each( function () {
+        for (var i = 0; i < arr.length; i++) {
+          if ($(this).text() === arr[i]) {
+            $(this).parent().show();
+          }
+        }
+      });
     }
-  } else {
-    $("[name='sort-field']").val(sortField);
-    $("[name='sort-order']").val(defaultOrder);
-  }
-  $("#movie-search-form").submit();
-}
+  });
+});
