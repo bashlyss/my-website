@@ -100,3 +100,45 @@ body {
 .movie-listing .col6 {
   display: none;
 }
+
+input[type="text"] {
+  border: 1px solid black;
+  border-radius: 2px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 8px;
+  padding: 4px;
+  width: 100%;
+}
+
+.button, button, input[type="submit"] {
+  background: #f0f0f0;
+  border: 1px solid #bbbbbb;
+  border-radius: 2px;
+  color: #888888;
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 8px;
+  padding: 4px 8px;
+}
+
+.button:hover, button:hover, input[type="submit"]:hover {
+  background: #cccccc;
+  border-color: #777777;
+  color: black;
+}
+
+.range-filter input {
+  width: 20%;
+}
+
+.range-filter > div {
+  width: 50%;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.range-filter .ui-slider-range {
+  background: #f0f0f0;
+}
