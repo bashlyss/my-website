@@ -25,9 +25,12 @@ $(document).ready( function () {
     min: 1950,
     values: [ 1950, 2015 ],
     range: true,
+    step: 5,
     slide: function( event, ui ) {
       $( "[name='min-year']" ).val( ui.values[ 0 ] );
       $( "[name='max-year']" ).val( ui.values[ 1 ] );
+    },
+    stop: function( event, ui ) {
       $("#movie-search-form").submit();
     }
   });
