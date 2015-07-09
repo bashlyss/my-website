@@ -1,5 +1,5 @@
 <h1>Movies</h1>
-<p>Below is a collection of movies I have watched and my rating for them.  I hope to have short reviews for as many as possible shortly along with links to IMDb. </p>
+<p>Below is a collection of movies I have watched and my rating for them.  I hope to have short reviews for as many as possible shortly.</p>
 <form id="movie-search-form" method="POST" action="javascript:void(0)">
   <input type="text" name="keyword" placeholder="Search"/><br />
   <div class="range-filter">

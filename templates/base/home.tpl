@@ -1,14 +1,4 @@
-<p>Please take some time to explore my past coursework</p>
-<p>The following links are to assignments completed as part of my 3rd year User Interfaces course</p>
-<p>
-  <a href="buggui/buggui.html">Buggui</a> is a program that allows you to manipulate a car on an html5 canvas
-</p>
-<p>
-  <a href="wassup/views/wassup_app.html">Wassup</a> is a program that allows you to send messages through the server to someone with a different account
-</p>
-<p>
-  <a href="fotag/fotag.html">Fotag</a> is a program that allows the user to upload their images, rate them and search based on rating
-</p>
-<p>
-  <a href="utrack/utrack.html">Utrack</a> is a program that allows the user to track their activity during the day and see charts with the resulting progress
-</p>
+<p>Welcome to my personal website.  Please use the sidebar to see links to some of my past coursework, read about my interests and explore movies I have watched.  New features will be listed on this page as I complete them.</p>
+<p>I am a third year student at the University of Waterloo studying Computer Science.  I enjoy participating in musicals, playing strategy games, and hanging out with friends.  I hope this site can give you a small glimpse into my life.</p>
+<p>Use the links on the left to view my resume, LinkedIn profile, Github account, past coursework, and some deatils about my interests</p>
+<p>Use the movie reviews link to view the newset feature.  Search and sort through movie results and view the rating I gave them.  Soon, short reviews will accompany as many as possible.  Send me an email at <a href="mailto:james.loewen@uwaterloo.ca">james.loewen@uwaterloo.ca</a> with suggestions for movies to add, new features or any comments related to my site.</p>

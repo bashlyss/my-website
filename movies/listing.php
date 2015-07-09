@@ -25,6 +25,7 @@
 
   $movie_listing->set("movies", $allrows);
 
+  $mainTemplate->set("js", "/static/js/movies.js");
   $mainTemplate->set("title", "James' Website");
   $mainTemplate->set("content", $movie_listing->output());
   echo $mainTemplate->output();

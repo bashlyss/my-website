@@ -43,6 +43,14 @@
   color: gray;
 }
 
+.submenu {
+  display: none;
+}
+
+.submenu.open {
+  display: inherit;
+}
+
 .main {
   display: table-cell;
   padding: 16px;

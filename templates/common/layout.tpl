@@ -26,4 +26,5 @@
 <script src="/static/js/ext/jquery.tablesorter.min.js" type="text/javascript"></script>
 <script src="/static/js/ext/jquery-ui.min.js" type="text/javascript"></script>
 <script src="/static/js/global.js" type="text/javascript"></script>
+<script src="[@js]" type="text/javascript"></script>
 </html>
