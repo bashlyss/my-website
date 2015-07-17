@@ -6,3 +6,8 @@
   <td class="col5">[@rating]</td>
   <td class="col6">[@id]</td>
 </tr>
+[?if review]
+<tr class="review">
+  <td colspan="6">[@review]</td>
+</tr>
+[?fi]

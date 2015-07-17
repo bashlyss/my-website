@@ -6,8 +6,8 @@
 
   include($_SERVER['DOCUMENT_ROOT'] . "/templates/template.class.php");
 
-  $query = "SELECT id, name, year, genre, runtime, imdb_link, quality, series FROM movies";
-  $cols = ['id', 'name', 'year', 'genre', 'runtime', 'imdb_link', 'rating', 'series'];
+  $query = "SELECT id, name, year, genre, runtime, imdb_link, quality, series, review FROM movies";
+  $cols = ['id', 'name', 'year', 'genre', 'runtime', 'imdb_link', 'rating', 'series', 'review'];
 
   $result = mysql_query($query);
 

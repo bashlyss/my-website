@@ -1,16 +1,18 @@
-.header {
+div.header {
   text-align: center;
+  background: forestgreen;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  padding: 16px;
+  color: lightgray;
 }
-
-.header > * {
+div.header > * {
   margin: 0;
 }
-
-.header h1 {
+div.header h1 {
   font-size: 26px;
 }
-
-.header h2 {
+div.header h2 {
   font-size: 20px;
 }
 
@@ -18,35 +20,31 @@
   display: table-cell;
   padding: 16px;
   vertical-align: top;
-  background: #F0F0F0;
+  background: forestgreen;
+  border-radius: 2px;
   height: 100%;
   text-transform: uppercase;
   font-size: 14px;
   color: black;
   font-weight: 600;
   line-height: 1.5;
-  width: 200px;;
+  min-width: 200px;
 }
-
 .sidebar ul {
   list-style-type: none;
   padding-left: 10px;
 }
-
 .sidebar a {
   text-decoration: none;
   color: inherit;
 }
-
 .sidebar .sub-heading {
   cursor: pointer;
-  color: gray;
+  color: lightgray;
 }
-
 .submenu {
   display: none;
 }
-
 .submenu.open {
   display: inherit;
 }
@@ -55,9 +53,9 @@
   display: table-cell;
   padding: 16px;
 }
-
-body {
-  display: table;
+.body {
+  max-width: 1024px;
+  margin: auto;
 }
 
 .interest-sm h4{
@@ -70,46 +68,58 @@ body {
   border-radius: 5px;
   line-height: 1.5;
 }
-
 .movie-listing thead {
-  background: #F0F0F0;
+  background: forestgreen;
+  color: lightgrey;
   cursor: pointer;
 }
-
 .movie-listing tbody td {
   border-top: 1px gray solid;
 }
-
 .movie-listing .col1 {
   min-width: 350px;
   width: 100%;
 }
-
 .movie-listing .col2 {
   min-width: 70px;
   text-align: center;
 }
-
 .movie-listing .col3 {
   width: 150px;
   min-width: 100px;
 }
-
 .movie-listing .col4 {
   min-width: 90px;
   text-align: center;
 }
-
 .movie-listing .col5 {
   min-width: 80px;
   text-align: center;
 }
-
 .movie-listing .col6 {
   display: none;
 }
+.movie-listing .review {
+  display: none;
+}
+.movie-listing .review td {
+  border-top: none;
+  padding-left: 8px;
+}
+.tablesorter .filtered {
+  display: none;
+}
+.movie-listing thead tr:last-child {
+  display: none;
+}
 
-input[type="text"] {
+#movie-search-form {
+  width: 480px;
+  margin: auto;
+}
+
+
+input[type="search"] {
   border: 1px solid black;
   border-radius: 2px;
   font-weight: 600;
@@ -118,7 +128,6 @@ input[type="text"] {
   padding: 4px;
   width: 100%;
 }
-
 .button, button, input[type="submit"] {
   background: #f0f0f0;
   border: 1px solid #bbbbbb;
@@ -130,23 +139,44 @@ input[type="text"] {
   margin: 8px;
   padding: 4px 8px;
 }
-
 .button:hover, button:hover, input[type="submit"]:hover {
   background: #cccccc;
   border-color: #777777;
   color: black;
 }
 
-.range-filter input {
-  width: 20%;
+.range-filter {
+  margin: 8px;
+  position: relative;
 }
-
-.range-filter > div {
-  width: 50%;
+.range-filter > label {
   display: inline-block;
-  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  height: 50px;
+  line-height: 50px;
 }
-
+.range-filter > div {
+  display: inline-block;
+  height: 5px;
+  margin: 25px 0 25px 8px;
+  width: 400px;
+  position: relative;
+  left: 65px;
+}
 .range-filter .ui-slider-range {
-  background: #f0f0f0;
+  background: forestgreen;
+}
+.range-filter > div .ui-slider-handle {
+  color: forestgreen;
+  text-align: center;
+  top: -25px;
+  width: 50px;
+  margin-left: -25px;
+  touch-action: none;
+}
+.range-filter > div .ui-slider-handle:last-child {
+  top: 5px;
 }

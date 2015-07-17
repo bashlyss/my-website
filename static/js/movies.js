@@ -1,8 +1,21 @@
 $(document).ready( function () {
   $(".movie-listing").tablesorter({ 
     // sort on the first column and third column, order asc 
-    sortList: [[4,1],[0,0]] 
+    sortList: [[4,1],[0,0]],
+    cssChildRow: "review",
+    widgets: ["filter"],
+    widgetOptions: {
+      filter_external: '.search',
+      filter_startsWith: false,
+      filter_ignoreCase: true,
+      filter_hideEmpty: true,
+      filter_liveSearch: true
+    }
   }); 
+  
+  $(".movie-listing-item").click(function () {
+    $(this).next(".review").toggle();
+  });
   
   $("#rating-slider").slider({
     max: 10,
@@ -12,7 +25,9 @@ $(document).ready( function () {
     slide: function( event, ui ) {
       $( "[name='min-rating']" ).val( ui.values[ 0 ] );
       $( "[name='max-rating']" ).val( ui.values[ 1 ] );
-      $("#movie-search-form").submit();
+      $(this).find(".ui-slider-handle").eq(0).text(ui.values[0]);
+      $(this).find(".ui-slider-handle").eq(1).text(ui.values[1]);
+      $(".tablesorter-filter[data-column='4']").val("<=" + ui.values[1] + " && >=" + ui.values[0]).trigger("search");
     }
   });
   $("#year-slider").slider({
@@ -24,34 +39,14 @@ $(document).ready( function () {
     slide: function( event, ui ) {
       $( "[name='min-year']" ).val( ui.values[ 0 ] );
       $( "[name='max-year']" ).val( ui.values[ 1 ] );
-    },
-    stop: function( event, ui ) {
-      $("#movie-search-form").submit();
+      $(this).find(".ui-slider-handle").eq(0).text(ui.values[0]);
+      $(this).find(".ui-slider-handle").eq(1).text(ui.values[1]);
+      $(".tablesorter-filter[data-column='1']").val(">=" + ui.values[0] + " && <=" + ui.values[1]).trigger("search");
     }
   });
-});
-
-$("#movie-search-form").submit(function () {
-  event.preventDefault();
   
-  var posting = $.post("/movies/search.php", {
-    keyword: $("[name='keyword']").val(),
-    'min-rating': $("[name='min-rating']").val(),
-    'max-rating': $("[name='max-rating']").val(),
-    'min-year': $("[name='min-year']").val(),
-    'max-year': $("[name='max-year']").val()
-  });
-  posting.done(function(data) {
-    arr = JSON.parse(data);
-    $("tbody tr").hide();
-    if (arr) {
-      $("tbody tr td:last-child").each( function () {
-        for (var i = 0; i < arr.length; i++) {
-          if ($(this).text() === arr[i]) {
-            $(this).parent().show();
-          }
-        }
-      });
-    }
-  });
+  $("#year-slider").find(".ui-slider-handle").eq(0).text(1950);
+  $("#year-slider").find(".ui-slider-handle").eq(1).text(2015);
+  $("#rating-slider").find(".ui-slider-handle").eq(0).text(1);
+  $("#rating-slider").find(".ui-slider-handle").eq(1).text(10);
 });

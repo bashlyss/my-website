@@ -73,7 +73,7 @@
             
             // parse if statements
             $ifblocks = [];
-            $if_pattern = "/\[\?if (?P<tag>\w+)\](?P<text>.*?)?\[\?fi\]/";
+            $if_pattern = "/\[\?if (?P<tag>\w+)\](?P<text>.*?)?\[\?fi\]/s";
             preg_match_all($if_pattern, $output, $ifblocks, PREG_SET_ORDER);
             foreach ($ifblocks as $ifblock) {
               if (strcmp($this->values[$ifblock['tag']], '')) {
