@@ -6,14 +6,13 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">James</a>
+    <a class="navbar-brand" href="/">James</a>
   </div>
   <div class="collapse navbar-collapse" id="main-navbar-collapse">
     <ul class="nav navbar-nav">
-      <li><a href="/">Home</a></li>
-      <li><a href="/static/files/resume.pdf">Resume</a></li>
-      <li><a href="http://ca.linkedin.com/in/loewenjames">LinkedIn</a></li>
-      <li><a href="http://github.com/loewen-uwaterloo">GitHub</a></li>
+      <li><a target="_blank" href="/static/files/resume.pdf">Resume</a></li>
+      <li><a target="_blank" href="http://ca.linkedin.com/in/loewenjames">LinkedIn</a></li>
+      <li><a target="_blank" href="http://github.com/loewen-uwaterloo">GitHub</a></li>
       <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio<span class="caret"></span></a>
         <ul class="dropdown-menu forAnimate" role="menu">
           <li><a href="/wassup/views/wassup_app.html">Wassup</a></li>
