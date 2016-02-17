@@ -27,6 +27,8 @@
           <li><a href="/interests/chess.php">Chess</a></li>
           <li><a href="/interests/chapel.php">Chapel Committee</a></li>
           <li><a href="/interests/contests.php">Programming Competitions</a></li>
+          <li><a href="/interests/programming.php">Programming Projects</a></li>
+          <li><a href="/interests/travel.php">Travel</a></li>
         </ul>
       </li>
       <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Movie Reviews<span class="caret"></span></a>
