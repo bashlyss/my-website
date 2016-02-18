@@ -29,6 +29,9 @@
           <li><a href="/interests/contests.php">Programming Competitions</a></li>
           <li><a href="/interests/programming.php">Programming Projects</a></li>
           <li><a href="/interests/travel.php">Travel</a></li>
+		  <li><a href="/interests/cottage.php">Cottage</a></li>
+		  <li><a href="/interests/reading.php">Reading</a></li>
+		  <li><a href="/interests/video_games.php">Video Games</a></li>
         </ul>
       </li>
       <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Movie Reviews<span class="caret"></span></a>
