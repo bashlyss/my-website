@@ -1,25 +1,25 @@
 <?php
-  mysql_connect() or
-      die("Could not connect: " . mysql_error());
-  mysql_select_db("james-database");
+  $config = parse_ini_file('../../config.ini');
+  $connection = mysqli_connect("localhost", $config['username'], $config['password'], $config['dbname']) or
+      die("Could not connect: " . mysqli_error());
 
 
   include($_SERVER['DOCUMENT_ROOT'] . "/templates/template.class.php");
 
   $query = "SELECT id, name, year, genre, runtime, imdb_link, quality, series, review FROM movies";
-  $cols = ['id', 'name', 'year', 'genre', 'runtime', 'imdb_link', 'rating', 'series', 'review'];
+  $cols = ['id', 'name', 'year', 'genre', 'runtime', 'imdb_link', 'quality', 'series', 'review'];
 
-  $result = mysql_query($query);
+  $result = mysqli_query($connection, $query);
 
   $movie_listing = new Template("movies", "listing.tpl");
-  while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+  while ($row = mysqli_fetch_assoc($result)) {
     $rowTemplate = new Template("movies", "list-item.tpl");
     for ($x = 0; $x <= 8; $x++) {
-      $rowTemplate->set($cols[$x], $row[$x]);
+      $rowTemplate->set($cols[$x], $row[$cols[$x]]);
     }
     $rowTemplates[] = $rowTemplate;
   }
-  mysql_free_result($result);
+  mysqli_free_result($result);
 
   $allrows = Template::merge($rowTemplates);
 
