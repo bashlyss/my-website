@@ -15,7 +15,7 @@
       <li><a target="_blank" href="http://github.com/loewen-uwaterloo">GitHub</a></li>
       <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio<span class="caret"></span></a>
         <ul class="dropdown-menu forAnimate" role="menu">
-          <li><a href="/wassup/views/wassup_app.html">Wassup</a></li>
+          <li><a href="http://james-loewen.com:8080">Wassup</a></li>
           <li><a href="/fotag/fotag.html">Fotag</a></li>
           <li><a href="/buggui/buggui.html">Buggui</a></li>
           <li><a href="/utrack/utrack.html">Utrack</a></li>

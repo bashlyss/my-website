@@ -2,15 +2,15 @@
 
 // TODO create mobile view
 
-var LOCAL_SERVER = "http://localhost:8080";
-var PUBLIC_SERVER = "http://104.197.3.113";
+var LOCAL_SERVER = "http://" + window.location.hostname + ":8080";
+var PUBLIC_SERVER = LOCAL_SERVER;
 
 var message_count = 0;
 
 var server = LOCAL_SERVER;
-var sups;
+var sups = [];
 var currentSup;
-var currentSupIndex;
+var currentSupIndex = 0;
 
 window.addEventListener('load', function() {
     // Place your Wassup app code here
@@ -59,21 +59,6 @@ window.addEventListener('load', function() {
         }
     };
     getSups(getSupsCallback);
-
-    var private_btn = document.getElementById('private_btn');
-    var public_btn = document.getElementById('public_btn');
-    private_btn.addEventListener('click', function () {
-        server = LOCAL_SERVER;
-        currentSup = null;
-        getSups(getSupsCallback);
-        getFriends(getFriendsCallback);
-    });
-    public_btn.addEventListener('click', function () {
-        server = PUBLIC_SERVER;
-        currentSup = null;
-        getSups(getSupsCallback);
-        getFriends(getFriendsCallback);
-    });
 
     var userExistsCallback = function (response) {
         if (response.exists) {
@@ -264,10 +249,7 @@ function handleAjaxRequest(command, command_data, callback) {
         message_id: generateUUID(),
         command: command,
         command_data: command_data};
-    if (server === PUBLIC_SERVER) {
-        objectToSend.user_id = getCookie("user_id");
-    }
-//    httpRequest.send(JSON.stringify(objectToSend));
+    httpRequest.send(JSON.stringify(objectToSend));
 }
 
 function drawSup () {
