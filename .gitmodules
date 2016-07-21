@@ -1,0 +1,3 @@
+[submodule "hp"]
+	path = hp
+	url = git://github.com/loewen-uwaterloo/hp-platformer
