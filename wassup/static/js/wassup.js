@@ -2,7 +2,7 @@
 
 // TODO create mobile view
 
-var LOCAL_SERVER = "http://" + window.location.hostname + ":8080";
+var LOCAL_SERVER = "https://" + window.location.hostname;
 var PUBLIC_SERVER = LOCAL_SERVER;
 
 var message_count = 0;

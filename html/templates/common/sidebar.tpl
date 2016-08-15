@@ -15,10 +15,11 @@
       <li><a target="_blank" href="http://github.com/loewen-uwaterloo">GitHub</a></li>
       <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio<span class="caret"></span></a>
         <ul class="dropdown-menu forAnimate" role="menu">
-          <li><a href="http://james-loewen.com:8080">Wassup</a></li>
+          <li><a href="https://wassup.james-loewen.com">Wassup</a></li>
           <li><a href="/fotag/fotag.html">Fotag</a></li>
           <li><a href="/buggui/buggui.html">Buggui</a></li>
           <li><a href="/utrack/utrack.html">Utrack</a></li>
+          <li><a href="https://hp.james-loewen.com">Harry Potter Game</a></li>
         </ul>
       </li>
       <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Interests<span class="caret"></span></a>
