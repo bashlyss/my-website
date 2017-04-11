@@ -1,4 +1,4 @@
 #!/bin/bash
-service apache restart
+service apache2 restart
 service nginx restart
-python wassup/wassup.py &
+service uwsgi restart

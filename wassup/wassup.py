@@ -21,7 +21,9 @@ of the DB at any time.
 import os
 import pickle
 import base64
-from bottle import route, run, static_file, template, request, redirect, response
+from bottle import Bottle, route, run, static_file, template, request, redirect, response
+
+app = application = Bottle()
 
 # File names
 DEFAULT_DB_FILE_NAME = 'wassup_app_db.bin'
@@ -219,7 +221,7 @@ Client-Server Protocol
                of data returned is command-specific, and noted below
 '''
 
-@route('/post', method="POST")
+@app.route('/post', method="POST")
 def handle_post():
   '''
   This handles all the AJAX requests.
@@ -513,7 +515,7 @@ def generate_reply(
 ##################################################################
 ###################       Other Routing         ##################
 ##################################################################
-@route('/')
+@app.route('/')
 def main():
   '''
   The primary page for the app.
@@ -523,14 +525,14 @@ def main():
     return
   return template(WASSUP_APP_FILE_NAME)
 
-@route('/login', method='GET')
+@app.route('/login', method='GET')
 def login(error_message=''):
   '''
   The login page
   '''
   return template(WASSUP_LOGIN_FILE_NAME, error_message=error_message)
 
-@route('/logged_in', method='POST')
+@app.route('/logged_in', method='POST')
 def logged_in():
   '''
   The page the user is sent to when posting their login info
@@ -548,7 +550,7 @@ def logged_in():
     return login("Error logging in. Please try again. (Error: " + str(e) + ")")
   redirect('/')
 
-@route('/logout', method='POST')
+@app.route('/logout', method='POST')
 def logout():
   try:
     response.delete_cookie(USER_ID_KEY)
@@ -556,7 +558,7 @@ def logout():
     return generate_error('', '', 'Error logging out: ' + str(e))
   redirect('/login')
 
-@route('/egg')
+@app.route('/egg')
 def egg():
   return base64.b64decode("PCFET0NUWVBFIGh0bUw+PGh0bWw+PGhlYWQ+PGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjMuMS9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiLz48L2hlYWQ+PGJvZHk+PGRpdiBjbGFzcz0iY29udGFpbmVyIj48cD48Y2VudGVyPjxpbWcgc3JjPSJodHRwOi8vaS5pbWd1ci5jb20vRmdRM21Zay5qcGciIGNsYXNzPSJpbWctcmVzcG9uc2l2ZSI+PC9jZW50ZXI+PC9wPjxwPjxjZW50ZXI+R29vZCBsdWNrITwvY2VudGVyPjwvcD48cD4oSW1hZ2Ugc291cmNlOiA8YSBocmVmPSJodHRwOi8vaW1ndXIuY29tL0ZnUTNtWWsiPmh0dHA6Ly9pbWd1ci5jb20vRmdRM21ZazwvYT4pPC9wPjwvZGl2PjwvYm9keT48L2h0bWw+")
 
@@ -564,7 +566,7 @@ def egg():
 ##################################################################
 ################### Do not modify the following ##################
 ##################################################################
-@route('/static/<filename:path>')
+@app.route('/static/<filename:path>')
 def server_static(filename):
   base_dir = os.path.abspath(os.path.dirname(__file__))
   return static_file(filename, root='%s/static'%(base_dir))
